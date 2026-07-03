@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Charith Kalhara | Cloud Engineer & DevOps Portfolio" />
+  <meta name="theme-color" content="#000000" />
+  <title>Charith Kalhara | Cloud & DevOps Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <div class="loading-screen" id="loadingScreen" aria-hidden="true">
+    <div class="loader-text">Initializing Portfolio</div>
+    <div class="loader-bar"><span></span></div>
+  </div>
+
+  <div class="progress-indicator" id="scrollProgress" aria-hidden="true"></div>
+  <canvas id="particlesCanvas" aria-hidden="true"></canvas>
+  <div class="grid-overlay" aria-hidden="true"></div>
+  <div class="spotlight" id="spotlight" aria-hidden="true"></div>
+
+  <header class="site-header" id="siteHeader">
+    <nav class="container nav">
+      <a href="#hero" class="brand" aria-label="Go to top">CK</a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#github">GitHub</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="hero section">
+      <div class="container hero-content">
+        <p class="eyebrow reveal">Premium Cloud & DevOps Portfolio</p>
+        <h1 class="reveal delay-1">CHARITH KALHARA</h1>
+        <p class="hero-subtitle reveal delay-2 typing" data-text="Cloud Engineer • DevOps Engineer • Computer Science Undergraduate"></p>
+        <p class="hero-intro reveal delay-3">
+          I design and build reliable cloud-native systems with a strong focus on Linux, automation,
+          Infrastructure as Code, and scalable deployment practices.
+        </p>
+        <div class="hero-actions reveal delay-4">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="assets/resume.pdf" class="btn btn-outline" download>Download Resume</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title reveal">About Me</h2>
+        <div class="glass card reveal delay-1">
+          <p>
+            I am a Computer Science undergraduate passionate about Cloud Computing and DevOps engineering.
+            My focus is on building dependable infrastructure, automating repetitive operations, and
+            continuously improving software delivery workflows.
+          </p>
+          <p>
+            I enjoy working close to the systems layer—Linux administration, networking fundamentals,
+            containerization, and infrastructure automation. I value clear architecture, secure defaults,
+            and operational simplicity.
+          </p>
+          <p>
+            Through real-world projects, I am developing practical skills in CI/CD, cloud deployment,
+            and observability. My long-term goal is to contribute to teams that build scalable,
+            resilient platforms while continuously learning modern cloud technologies.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title reveal">Skills</h2>
+        <div class="skills-grid">
+          <article class="skill-card reveal">
+            <h3>Cloud</h3>
+            <ul>
+              <li>AWS</li>
+              <li>Microsoft Azure</li>
+              <li>Oracle Cloud Infrastructure</li>
+            </ul>
+            <div class="progress-wrap"><span>Cloud Platforms</span><div class="progress"><span data-progress="75"></span></div></div>
+          </article>
+
+          <article class="skill-card reveal delay-1">
+            <h3>DevOps</h3>
+            <ul>
+              <li>Docker</li>
+              <li>Kubernetes</li>
+              <li>GitHub Actions</li>
+              <li>Terraform</li>
+            </ul>
+            <div class="progress-wrap"><span>Automation & Delivery</span><div class="progress"><span data-progress="72"></span></div></div>
+          </article>
+
+          <article class="skill-card reveal delay-2">
+            <h3>Programming</h3>
+            <ul>
+              <li>PHP</li>
+              <li>Java</li>
+              <li>JavaScript</li>
+              <li>Python</li>
+              <li>SQL</li>
+            </ul>
+            <div class="progress-wrap"><span>Software Development</span><div class="progress"><span data-progress="70"></span></div></div>
+          </article>
+
+          <article class="skill-card reveal delay-3">
+            <h3>Operating Systems</h3>
+            <ul>
+              <li>Linux</li>
+              <li>Ubuntu</li>
+            </ul>
+            <div class="progress-wrap"><span>System Administration</span><div class="progress"><span data-progress="78"></span></div></div>
+          </article>
+
+          <article class="skill-card reveal delay-4">
+            <h3>Networking</h3>
+            <ul>
+              <li>TCP/IP</li>
+              <li>DNS</li>
+              <li>HTTP/HTTPS</li>
+              <li>SSH</li>
+              <li>Firewalls</li>
+            </ul>
+            <div class="progress-wrap"><span>Network Fundamentals</span><div class="progress"><span data-progress="68"></span></div></div>
+          </article>
+
+          <article class="skill-card reveal delay-5">
+            <h3>Databases</h3>
+            <ul>
+              <li>MySQL</li>
+              <li>SQLite</li>
+            </ul>
+            <div class="progress-wrap"><span>Data Layer</span><div class="progress"><span data-progress="66"></span></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications" class="section">
+      <div class="container">
+        <h2 class="section-title reveal">Certifications</h2>
+        <div class="card-grid">
+          <article class="glass card reveal">
+            <h3>Microsoft Azure Fundamentals (AZ-900)</h3>
+            <p>Foundation in Azure core cloud services, architecture principles, and governance concepts.</p>
+          </article>
+          <article class="glass card reveal delay-1">
+            <h3>Oracle Cloud Infrastructure Foundations Associate</h3>
+            <p>Understanding of OCI fundamentals, compute, networking, storage, and cloud operations basics.</p>
+          </article>
+          <article class="glass card reveal delay-2">
+            <h3>Postman API Fundamentals Student Expert</h3>
+            <p>API testing, collaborative workflows, and practical API lifecycle knowledge.</p>
+          </article>
+        </div>
+
+        <div class="glass card reveal delay-3 currently-learning">
+          <h3>Currently Learning</h3>
+          <ul>
+            <li>Kubernetes</li>
+            <li>AWS Solutions Architect</li>
+            <li>Advanced Terraform</li>
+            <li>Cloud Security</li>
+            <li>Monitoring & Observability</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title reveal">Featured Projects</h2>
+        <div class="projects-grid">
+          <article class="project-card reveal">
+            <div class="project-image">Project Preview</div>
+            <div class="project-body">
+              <h3>Nadu Court Case Management System</h3>
+              <p>
+                A secure web platform to streamline court case and debt recovery management with
+                cloud deployment, automated backups, and containerized infrastructure.
+              </p>
+              <ul>
+                <li><strong>Features:</strong> Case lifecycle management, role-based access, reporting.</li>
+                <li><strong>Technologies:</strong> Laravel, Docker, MySQL, OCI, Nginx, GitHub Actions.</li>
+                <li><strong>Architecture:</strong> Containerized app + managed database + reverse proxy.</li>
+                <li><strong>Challenges:</strong> Secure deployment, reliability, repeatable release process.</li>
+                <li><strong>Solutions:</strong> CI/CD automation, backup strategy, infrastructure hardening.</li>
+              </ul>
+              <a href="https://github.com/CharithKalhara" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal delay-1">
+            <div class="project-image">Kubernetes Lab</div>
+            <div class="project-body">
+              <h3>Cloud Native Kubernetes Lab</h3>
+              <p>
+                A learning-focused cloud-native lab covering container orchestration, Terraform-provisioned
+                infrastructure, CI/CD deployment pipelines, monitoring, and health checks on AWS.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-card reveal delay-2">
+            <div class="project-image">Terraform Modules</div>
+            <div class="project-body">
+              <h3>Terraform Infrastructure</h3>
+              <p>
+                Reusable Infrastructure as Code modules for AWS networking and EC2 deployment,
+                emphasizing maintainability, version control, and predictable provisioning.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-card reveal delay-3">
+            <div class="project-image">Container Ops</div>
+            <div class="project-body">
+              <h3>Docker Deployments</h3>
+              <p>
+                Docker Compose-based Linux deployments with container networking, persistent storage,
+                and Nginx reverse proxy integration for reliable service delivery.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="timeline" class="section">
+      <div class="container">
+        <h2 class="section-title reveal">Experience Timeline</h2>
+        <div class="timeline">
+          <div class="timeline-item reveal"><span>Computer Science Undergraduate</span></div>
+          <div class="timeline-item reveal delay-1"><span>Cloud Certifications</span></div>
+          <div class="timeline-item reveal delay-2"><span>Cloud Projects</span></div>
+          <div class="timeline-item reveal delay-3"><span>Infrastructure Automation</span></div>
+          <div class="timeline-item reveal delay-4"><span>Current Learning Journey</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="github" class="section">
+      <div class="container">
+        <h2 class="section-title reveal">GitHub Dashboard</h2>
+        <div class="github-grid">
+          <div class="glass card reveal"><h3>Repository Cards</h3><p>Placeholder cards ready for GitHub API integration.</p></div>
+          <div class="glass card reveal delay-1"><h3>Contribution Graph</h3><p>Contribution heatmap placeholder.</p></div>
+          <div class="glass card reveal delay-2"><h3>Statistics</h3><p>Commits, stars, and activity placeholder.</p></div>
+          <div class="glass card reveal delay-3"><h3>Top Languages</h3><p>Language distribution placeholder.</p></div>
+          <div class="glass card reveal delay-4"><h3>Recent Projects</h3><p>Latest repositories placeholder.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <div class="container">
+        <h2 class="section-title reveal">Education</h2>
+        <article class="glass card reveal delay-1">
+          <h3>Computer Science Undergraduate</h3>
+          <p>
+            Coursework includes Cloud Computing, Networking, Operating Systems,
+            Databases, Software Engineering, and Distributed Systems.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title reveal">Contact</h2>
+        <div class="contact-grid">
+          <div class="glass card reveal">
+            <p><strong>Email:</strong> <a href="mailto:charithkalhara@example.com">charithkalhara@example.com</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/CharithKalhara" target="_blank" rel="noopener">github.com/CharithKalhara</a></p>
+            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com" target="_blank" rel="noopener">linkedin.com/in/your-profile</a></p>
+            <p><strong>Location:</strong> Sri Lanka</p>
+          </div>
+          <form class="glass card reveal delay-1" id="contactForm" novalidate>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <p id="formStatus" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© <span id="year"></span> Charith Kalhara. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#hero">Top</a>
+        <a href="#projects">Projects</a>
+        <a href="assets/resume.pdf" download>Resume</a>
+        <a href="https://github.com/CharithKalhara" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="js/particles.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

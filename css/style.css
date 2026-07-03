@@ -266,9 +266,10 @@ img {
 }
 
 .project-image {
-  min-height: 170px;
+  height: clamp(180px, 22vw, 240px);
   display: grid;
   place-items: center;
+  overflow: hidden;
   border-bottom: 1px solid var(--border);
   color: var(--muted);
 }

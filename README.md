@@ -14,10 +14,6 @@ This project highlights:
 - Cloud and DevOps-oriented skill breakdown
 - Certification showcase
 - Featured cloud infrastructure projects
-- Experience timeline
-- GitHub API-powered dashboard with live repository data
-- Education and contact sections
-- Smooth animations and micro-interactions
 - Responsive layout across desktop, tablet, and mobile
 
 ---

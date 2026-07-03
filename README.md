@@ -15,7 +15,7 @@ This project highlights:
 - Certification showcase
 - Featured cloud infrastructure projects
 - Experience timeline
-- GitHub dashboard placeholders (API-ready)
+- GitHub API-powered dashboard with live repository data
 - Education and contact sections
 - Smooth animations and micro-interactions
 - Responsive layout across desktop, tablet, and mobile
@@ -57,7 +57,7 @@ portfolio/
 - **Interactive Skills section** with animated progress bars
 - **Detailed project cards** for Cloud/DevOps work
 - **Vertical experience timeline**
-- **GitHub-ready dashboard placeholders** for future API integration
+- **GitHub API-powered dashboard** with live repository stats and projects
 - **Contact form UI** with client-side validation placeholder
 - **Back-to-top button** and scroll progress indicator
 
@@ -77,7 +77,7 @@ git clone https://github.com/CharithKalhara/portfolio.git
 cd portfolio
 ```
 
-3. Open `index.html` directly in your browser or serve locally:
+3. Serve the site locally or open it from a deployed host so the GitHub API can load correctly:
 
 ```bash
 python -m http.server 8080
@@ -148,7 +148,7 @@ Optional: Use CloudFront + ACM for HTTPS and custom domain.
 - No framework overhead
 - Smooth, non-distracting animations
 - Responsive design with mobile-first adaptations
-- Clean structure ready for future enhancements (GitHub API, analytics, form backend)
+- Clean structure ready for future enhancements (analytics, form backend)
 
 ---
 

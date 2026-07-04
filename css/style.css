@@ -227,6 +227,10 @@ img {
   padding: .45rem;
 }
 
+.cert-actions {
+  margin-top: 1rem;
+}
+
 .skills-grid,
 .card-grid,
 .github-grid,

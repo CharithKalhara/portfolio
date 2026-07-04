@@ -107,10 +107,22 @@ img {
 }
 
 .brand {
-  border: 1px solid var(--border);
-  padding: .45rem .7rem;
-  border-radius: 8px;
-  font-weight: 700;
+  color: #fff;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1;
+
+  border: none;
+  background: none;
+  padding: 0;
+
+}
+
+.brand:hover {
+  opacity: .8;
 }
 
 .nav-links {

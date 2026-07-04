@@ -135,7 +135,6 @@ img {
   display: none;
   background: transparent;
   color: var(--text);
-  border: 1px solid var(--border);
   border-radius: 8px;
   padding: .35rem .6rem;
 }

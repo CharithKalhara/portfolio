@@ -297,6 +297,10 @@
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="5" required></textarea>
 
+            <div
+                class="g-recaptcha"
+                data-sitekey="6Lc4YkgtAAAAALHpCvoJ_EK2ERtRvR9YJSKhcnwb">
+            </div>
             <button type="submit" class="btn btn-primary">Send Message</button>
             <p id="formStatus" aria-live="polite"></p>
           </form>
@@ -319,6 +323,11 @@
 
   <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
 
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+  <script src="js/particles.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
   <script src="js/particles.js"></script>
   <script src="js/animations.js"></script>
   <script src="js/main.js"></script>

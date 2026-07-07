@@ -58,16 +58,59 @@ document.addEventListener('DOMContentLoaded', () => {
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  // Contact form (front-end placeholder)
-  form?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    if (!form.checkValidity()) {
-      formStatus.textContent = 'Please complete all required fields.';
+  // Contact form
+form?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  if (!form.checkValidity()) {
+    formStatus.textContent = 'Please complete all required fields.';
+    return;
+  }
+
+  const token = grecaptcha.getResponse();
+
+  if (!token) {
+    formStatus.textContent = 'Please complete the reCAPTCHA.';
+    return;
+  }
+
+  formStatus.textContent = 'Verifying...';
+
+  try {
+    const response = await fetch(
+      'https://yvlpywwzn4zxrokmgklaiclowe0kxhyt.lambda-url.ap-southeast-1.on.aws/',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          token
+        })
+      }
+    );
+
+    const result = await response.json();
+
+    if (!result.success) {
+      formStatus.textContent = 'reCAPTCHA verification failed.';
+      grecaptcha.reset();
       return;
     }
-    formStatus.textContent = 'Thank you! Your message has been captured locally.';
+
+    formStatus.textContent = 'Verification successful!';
+
+    // TODO:
+    // Send your email/contact request here.
+
     form.reset();
-  });
+    grecaptcha.reset();
+
+  } catch (error) {
+    console.error(error);
+    formStatus.textContent = 'Server error. Please try again later.';
+  }
+});
 
   // Typewriter subtitle
   const typing = document.querySelector('.typing');

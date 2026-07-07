@@ -59,59 +59,72 @@ document.addEventListener('DOMContentLoaded', () => {
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
   // Contact form
-form?.addEventListener('submit', async (e) => {
-  e.preventDefault();
+  
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-  if (!form.checkValidity()) {
-    formStatus.textContent = 'Please complete all required fields.';
-    return;
-  }
-
-  const token = grecaptcha.getResponse();
-
-  if (!token) {
-    formStatus.textContent = 'Please complete the reCAPTCHA.';
-    return;
-  }
-
-  formStatus.textContent = 'Verifying...';
-
-  try {
-    const response = await fetch(
-      'https://yvlpywwzn4zxrokmgklaiclowe0kxhyt.lambda-url.ap-southeast-1.on.aws/',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          token
-        })
+      if (!form.checkValidity()) {
+        formStatus.textContent = 'Please complete all required fields.';
+        return;
       }
-    );
 
-    const result = await response.json();
+      const token = grecaptcha.getResponse();
 
-    if (!result.success) {
-      formStatus.textContent = 'reCAPTCHA verification failed.';
-      grecaptcha.reset();
-      return;
-    }
+      if (!token) {
+        formStatus.textContent = 'Please complete the reCAPTCHA.';
+        return;
+      }
 
-    formStatus.textContent = 'Verification successful!';
+      formStatus.textContent = 'Sending...';
 
-    // TODO:
-    // Send your email/contact request here.
+      const submitButton = form.querySelector('button[type="submit"]');
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending...';
 
-    form.reset();
-    grecaptcha.reset();
+      try {
+        const response = await fetch(
+          'https://YOUR_LAMBDA_URL_HERE',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              token,
+              name: form.name.value,
+              email: form.email.value,
+              subject: form.subject ? form.subject.value : '',
+              message: form.message.value
+            })
+          }
+        );
 
-  } catch (error) {
-    console.error(error);
-    formStatus.textContent = 'Server error. Please try again later.';
-  }
-});
+        const result = await response.json();
 
+        if (result.success) {
+          formStatus.textContent = '✅ Message sent successfully!';
+          formStatus.style.color = '#22c55e';
+
+          form.reset();
+          grecaptcha.reset();
+        } else {
+          formStatus.textContent =
+            result.message || 'Failed to send message.';
+          formStatus.style.color = '#ef4444';
+
+          grecaptcha.reset();
+        }
+      } catch (error) {
+        console.error(error);
+
+        formStatus.textContent =
+          'Server error. Please try again later.';
+        formStatus.style.color = '#ef4444';
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Send Message';
+      }
+    });
   // Typewriter subtitle
   const typing = document.querySelector('.typing');
   if (typing) {

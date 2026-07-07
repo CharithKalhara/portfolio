@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       try {
         const response = await fetch(
-          'https://YOUR_LAMBDA_URL_HERE',
+          'https://yvlpywwzn4zxrokmgklaiclowe0kxhyt.lambda-url.ap-southeast-1.on.aws/',
           {
             method: 'POST',
             headers: {

@@ -102,8 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const result = await response.json();
 
         if (result.success) {
-          formStatus.textContent = '✅ Message sent successfully!';
-          formStatus.style.color = '#22c55e';
+          formStatus.textContent = 'Sent successfully!';
 
           form.reset();
           grecaptcha.reset();
